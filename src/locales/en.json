@@ -1,0 +1,65 @@
+{
+  "title": "Farmers Scheme Guide",
+  "subtitle": "Find the best government support for your farm",
+  "languageLabel": "Language",
+  "selectLanguage": "Select language",
+  "regionLabel": "Region",
+  "selectRegion": "Choose your state/region",
+  "farmTypeLabel": "Farm type",
+  "selectFarmType": "Choose your farm type",
+  "cropsLabel": "Crops grown",
+  "selectCrops": "Choose one or more crops",
+  "incomeLabel": "Annual income",
+  "seeRecommendations": "See Recommendations",
+  "recommendationTitle": "Recommended schemes for you",
+  "noResults": "Please select your details to see relevant schemes.",
+  "schemes": {
+    "pmkisan": {
+      "name": "PM Kisan Samman Nidhi",
+      "description": "Financial assistance for small and marginal farmers to support crop production."
+    },
+    "soilHealth": {
+      "name": "Soil Health Card Scheme",
+      "description": "Free soil testing and tailored nutrient recommendations for better yields."
+    },
+    "dripIrrigation": {
+      "name": "Micro Irrigation (Drip/Sprinkler)",
+      "description": "Subsidy support for efficient irrigation systems to save water and increase productivity."
+    },
+    "cropInsurance": {
+      "name": "Pradhan Mantri Fasal Bima Yojana",
+      "description": "Crop insurance coverage for loss due to natural calamities, pests, and diseases."
+    },
+    "animalHusbandry": {
+      "name": "Animal Husbandry Support",
+      "description": "Funding and training for livestock, dairy, and poultry farmers."
+    }
+  },
+  "regions": {
+    "north": "North",
+    "south": "South",
+    "east": "East",
+    "west": "West"
+  },
+  "farmTypes": {
+    "cereals": "Cereals",
+    "vegetables": "Vegetables",
+    "fruits": "Fruits",
+    "dairy": "Dairy",
+    "mixed": "Mixed Farming"
+  },
+  "incomeOptions": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High"
+  },
+  "selectIncome": "Select income",
+  "crops": {
+    "wheat": "Wheat",
+    "rice": "Rice",
+    "maize": "Maize",
+    "vegetables": "Vegetables",
+    "fruits": "Fruits",
+    "dairy": "Dairy"
+  }
+}
