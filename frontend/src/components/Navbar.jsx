@@ -19,7 +19,8 @@ export default function Navbar({ setPage, activePage }) {
 				<div className="flex flex-wrap items-center justify-end gap-2">
 					<nav className="flex flex-wrap gap-1 text-sm font-semibold text-gray-600">
 						<NavButton page="schemes" label={t("Explore schemes")} activePage={activePage} setPage={setPage} />
-						<NavButton page="recommend" label={t("Find my schemes")} activePage={activePage} setPage={setPage} primary />
+						<NavButton page="recommend" label={t("Find my schemes")} activePage={activePage} setPage={setPage} />
+						<NavButton page="chat" label={t("AI Chat")} activePage={activePage} setPage={setPage} primary />
 						<NavButton page="about" label={t("About")} activePage={activePage} setPage={setPage} />
 					</nav>
 					<label className="flex items-center gap-2 text-sm font-semibold text-gray-600">
