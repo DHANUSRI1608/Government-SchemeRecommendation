@@ -28,17 +28,17 @@ export default function SchemeDetails({
 
   return (
 
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-gray-950/45 p-4 backdrop-blur-md">
 
-      <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white shadow-2xl">
+      <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[1.75rem] border border-white/70 bg-white shadow-[0_30px_100px_rgba(0,0,0,0.25)]">
 
         {/* Header */}
 
-        <div className="flex items-start justify-between border-b border-gray-100 p-6 sm:p-8">
+        <div className="flex items-start justify-between border-b border-gray-100 bg-gradient-to-br from-green-50/90 to-white p-6 sm:p-8">
 
           <div className="flex gap-4">
 
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100 text-green-700">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-green-100 to-lime-50 text-green-700 ring-1 ring-green-200/70">
 
               <FileText size={23} />
 
@@ -76,7 +76,7 @@ export default function SchemeDetails({
 
         <div className="p-6 sm:p-8">
 
-          <div className="rounded-2xl bg-green-50 p-5">
+          <div className="rounded-2xl border border-green-100 bg-gradient-to-br from-green-50 to-white p-5">
 
             <h3 className="font-semibold text-green-900">
               {t("About this scheme")}
@@ -178,7 +178,7 @@ function Detail({
 
   return (
 
-    <div className="rounded-xl border border-gray-100 p-4">
+    <div className="rounded-2xl border border-gray-100 bg-gray-50/60 p-4">
 
       <div className="flex items-center gap-2 text-green-700">
 

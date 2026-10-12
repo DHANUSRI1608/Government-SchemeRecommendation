@@ -4,11 +4,11 @@ export default function ChatSchemeCard({ scheme }) {
   if (!scheme) return null;
 
   return (
-    <div className="flex flex-col overflow-hidden rounded-xl border border-green-100 bg-green-50/50 shadow-sm transition hover:border-green-200 hover:shadow-md">
+    <div className="flex flex-col overflow-hidden rounded-2xl border border-green-100 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-green-200 hover:shadow-md">
       <div className="p-4 flex-1">
         
         <div className="flex items-start gap-2 mb-2">
-          <div className="mt-0.5 rounded-full bg-green-200/50 p-1 text-green-700">
+          <div className="mt-0.5 rounded-lg bg-green-50 p-1.5 text-green-700">
             <Tag size={12} />
           </div>
           <h4 className="font-bold text-green-950 text-sm leading-tight line-clamp-2">
@@ -29,7 +29,7 @@ export default function ChatSchemeCard({ scheme }) {
           href={scheme.sourceUrl} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-1.5 border-t border-green-100 bg-white py-2.5 text-xs font-semibold text-green-700 hover:bg-green-50/80 transition"
+          className="flex items-center justify-center gap-1.5 border-t border-green-100 bg-green-50/60 py-2.5 text-xs font-semibold text-green-800 transition hover:bg-green-100/80"
         >
           View Source
           <ExternalLink size={13} />

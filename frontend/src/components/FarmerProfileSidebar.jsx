@@ -21,10 +21,10 @@ export default function FarmerProfileSidebar({ profile, language }) {
   ];
 
   return (
-    <div className="flex h-full flex-col overflow-y-auto rounded-3xl bg-green-50/50 p-6 border border-green-100">
+    <div className="flex h-full flex-col overflow-y-auto rounded-[1.65rem] border border-white bg-white/85 p-5 shadow-[0_18px_55px_rgba(20,83,45,0.08)] ring-1 ring-green-900/[0.04] backdrop-blur sm:p-6">
       
       <div className="mb-6 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-200 text-green-800">
+        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-green-100 to-lime-50 text-green-800 ring-1 ring-green-200/70">
           <UserCheck size={20} />
         </div>
         <div>
@@ -45,8 +45,8 @@ export default function FarmerProfileSidebar({ profile, language }) {
               key={field.key} 
               className={`flex items-center gap-3 rounded-xl border p-3 transition-colors ${
                 hasValue 
-                  ? "bg-white border-green-200 shadow-sm" 
-                  : "bg-transparent border-dashed border-gray-200 opacity-60"
+                  ? "border-green-100 bg-gradient-to-r from-white to-green-50/40 shadow-sm"
+                  : "border-dashed border-gray-200 bg-gray-50/60 opacity-60"
               }`}
             >
               <div className={hasValue ? "text-green-600" : "text-gray-400"}>

@@ -4,7 +4,7 @@ import ChatInput from "./ChatInput";
 import LanguageSelector from "./LanguageSelector";
 import FarmerProfileSidebar from "./FarmerProfileSidebar";
 import { streamChatMessage, getSessionProfile } from "../services/chatApi";
-import { AlertCircle, RotateCcw } from "lucide-react";
+import { AlertCircle, Bot, RotateCcw } from "lucide-react";
 
 export default function ChatAssistant() {
   const [sessionId, setSessionId] = useState("");
@@ -15,7 +15,7 @@ export default function ChatAssistant() {
   const [profile, setProfile] = useState({});
   const [error, setError] = useState(null);
 
-  const messagesEndRef = useRef(null);
+  const messagesContainerRef = useRef(null);
 
   // Initialize session ID from sessionStorage or create new
   useEffect(() => {
@@ -56,7 +56,10 @@ export default function ChatAssistant() {
 
   // Auto-scroll to bottom of chat
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    const container = messagesContainerRef.current;
+    if (container) {
+      container.scrollTo({ top: container.scrollHeight, behavior: "smooth" });
+    }
   }, [messages, streamingText]);
 
   const handleSendMessage = async (text) => {
@@ -122,37 +125,40 @@ export default function ChatAssistant() {
   };
 
   return (
-    <div className="mx-auto flex w-full max-w-6xl flex-col xl:flex-row gap-6 p-4 h-[calc(100vh-80px)] min-h-[600px]">
+    <div className="mx-auto flex w-full max-w-7xl flex-col gap-5 p-2 sm:gap-6 sm:p-4 xl:flex-row xl:p-5">
       
       {/* Sidebar - farmer profile */}
-      <div className="hidden xl:block w-80 shrink-0 h-full">
+      <div className="hidden h-[min(760px,calc(100dvh-140px))] w-80 shrink-0 xl:block">
         <FarmerProfileSidebar profile={profile} language={language} />
       </div>
 
       {/* Main chat area */}
-      <div className="flex flex-1 flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm">
+      <div className="flex h-[min(760px,calc(100dvh-120px))] min-h-[560px] flex-1 flex-col overflow-hidden rounded-[1.75rem] border border-white bg-white shadow-[0_24px_70px_rgba(20,83,45,0.10)] ring-1 ring-green-900/[0.04]">
         
         {/* Header */}
-        <div className="flex h-16 shrink-0 items-center justify-between border-b border-gray-100 px-6">
+        <div className="flex min-h-[76px] shrink-0 items-center justify-between gap-3 border-b border-green-100/80 bg-gradient-to-r from-white via-green-50/50 to-white px-4 sm:px-6">
           <div className="flex items-center gap-3">
-            <div className="h-8 w-8 rounded-lg bg-green-600 flex items-center justify-center text-white font-bold">AI</div>
-            <h2 className="font-bold text-gray-900">
-              Kisan Setu Assistant
-            </h2>
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-green-600 to-green-800 text-white shadow-md shadow-green-900/15">
+              <Bot size={23} />
+            </div>
+            <div>
+              <h2 className="font-extrabold tracking-tight text-gray-950">Kisan Setu Assistant</h2>
+              <p className="mt-0.5 text-xs font-medium text-green-700">AI · Farmer support</p>
+            </div>
           </div>
           <div className="flex items-center gap-3">
             <LanguageSelector language={language} setLanguage={setLanguage} />
-            <button onClick={handleReset} className="text-gray-400 hover:text-red-500 transition tooltip" title="Reset Chat">
+            <button onClick={handleReset} aria-label="Reset Chat" className="flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-500 shadow-sm transition hover:border-red-200 hover:bg-red-50 hover:text-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600" title="Reset Chat">
               <RotateCcw size={18} />
             </button>
           </div>
         </div>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 bg-slate-50">
+        <div ref={messagesContainerRef} className="flex-1 overflow-y-auto bg-[radial-gradient(ellipse_at_90%_0%,rgba(187,247,208,0.22),transparent_40%),#f7faf8] p-4 sm:p-7">
           
           {error && (
-            <div className="mb-6 mx-auto max-w-md flex items-center gap-3 rounded-xl bg-red-50 p-4 text-red-600 border border-red-100">
+            <div className="mx-auto mb-6 flex max-w-md items-center gap-3 rounded-2xl border border-red-100 bg-white p-4 text-red-600 shadow-sm">
               <AlertCircle size={20} />
               <p className="text-sm">{error}</p>
             </div>
@@ -169,11 +175,11 @@ export default function ChatAssistant() {
             />
           )}
           
-          <div ref={messagesEndRef} className="h-4" />
+          <div className="h-4" />
         </div>
 
         {/* Input */}
-        <div className="shrink-0 border-t border-gray-100 bg-white p-4 sm:px-6 sm:pb-6">
+        <div className="shrink-0 border-t border-gray-100 bg-white/95 p-4 sm:px-6 sm:pb-6">
           <ChatInput 
             onSendMessage={handleSendMessage} 
             disabled={isStreaming} 

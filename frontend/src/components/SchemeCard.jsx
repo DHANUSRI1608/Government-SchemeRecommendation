@@ -34,18 +34,18 @@ export default function SchemeCard({
 
   return (
 
-    <article onClick={() => onViewDetails(scheme)} className="card-hover flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition hover:-translate-y-1 hover:border-green-200 hover:shadow-lg">
+    <article onClick={() => onViewDetails(scheme)} className="card-hover group flex h-full cursor-pointer flex-col overflow-hidden rounded-[1.4rem] border border-gray-200/90 bg-white shadow-[0_8px_28px_rgba(15,23,42,0.035)] transition hover:-translate-y-1 hover:border-green-200 hover:shadow-[0_20px_50px_rgba(20,83,45,0.11)]">
 
       {/* Top */}
 
-      <div className="h-1.5 bg-green-600" />
+      <div className="h-1.5 bg-gradient-to-r from-green-700 via-green-500 to-lime-400" />
 
 
       <div className="flex flex-1 flex-col p-6">
 
         <div className="flex items-start justify-between gap-4">
 
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-50 text-green-700">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-green-50 to-lime-50 text-green-700 ring-1 ring-green-100 transition group-hover:from-green-100 group-hover:to-lime-100">
 
             <Tag size={21} />
 
@@ -54,7 +54,7 @@ export default function SchemeCard({
 
           {match !== null && (
 
-            <div className="flex items-center gap-1.5 rounded-full bg-green-50 px-3 py-1.5 text-xs font-bold text-green-700">
+            <div className="flex items-center gap-1.5 rounded-full border border-green-100 bg-green-50 px-3 py-1.5 text-xs font-bold text-green-800">
 
               <Sparkles size={13} />
 
@@ -67,7 +67,7 @@ export default function SchemeCard({
         </div>
 
 
-        <h3 className="mt-5 text-xl font-bold leading-7 text-gray-900">
+        <h3 className="mt-5 text-lg font-extrabold leading-7 text-gray-950 sm:text-xl">
           {name}
         </h3>
 
@@ -118,7 +118,7 @@ export default function SchemeCard({
               event.stopPropagation();
               onViewDetails(scheme);
             }}
-            className="flex w-full items-center justify-center gap-2 rounded-xl border border-green-200 px-4 py-3 text-sm font-semibold text-green-700 transition hover:bg-green-50"
+            className="flex w-full items-center justify-center gap-2 rounded-xl border border-green-200 bg-white px-4 py-3 text-sm font-semibold text-green-800 transition hover:border-green-600 hover:bg-green-700 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
           >
 
             {t("View Scheme Details")}

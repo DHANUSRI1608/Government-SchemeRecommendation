@@ -20,13 +20,13 @@ export default function Home({ setPage }) {
 
       {/* HOW IT WORKS */}
 
-      <section className="bg-white py-20">
+      <section className="bg-white py-20 sm:py-24">
 
         <div className="section-container">
 
           <div className="mx-auto max-w-2xl text-center">
 
-            <p className="text-sm font-bold uppercase tracking-widest text-green-700">
+            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-green-700">
               {t("Simple Process")}
             </p>
 
@@ -41,7 +41,7 @@ export default function Home({ setPage }) {
           </div>
 
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
 
             <StepCard
               number="01"
@@ -76,7 +76,8 @@ export default function Home({ setPage }) {
 
       {/* STATS */}
 
-      <section className="green-gradient py-16">
+      <section className="green-gradient relative isolate overflow-hidden py-16 sm:py-20">
+        <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-32 -z-10 h-80 w-80 rounded-full border-[48px] border-white/[0.06]" />
 
         <div className="section-container">
 
@@ -110,7 +111,7 @@ export default function Home({ setPage }) {
 
         <div className="section-container">
 
-          <div className="overflow-hidden rounded-3xl bg-green-50 p-8 sm:p-12">
+          <div className="relative overflow-hidden rounded-[2rem] border border-green-100 bg-[radial-gradient(ellipse_at_90%_10%,rgba(187,247,208,0.72),transparent_42%),linear-gradient(135deg,#f0fdf4,#ffffff_65%)] p-8 shadow-sm sm:p-12">
 
             <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
 
@@ -167,7 +168,7 @@ function StepCard({
 
   return (
 
-    <button onClick={onClick} className="card-hover group w-full rounded-2xl border border-gray-200 bg-white p-7 text-left transition hover:-translate-y-1 hover:border-green-200 hover:shadow-lg">
+    <button onClick={onClick} className="card-hover group w-full rounded-2xl border border-gray-200 bg-white p-7 text-left transition hover:-translate-y-1 hover:border-green-200 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2">
 
       <div className="flex items-center justify-between">
 
@@ -189,7 +190,7 @@ function StepCard({
         {description}
       </p>
 
-      <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-green-700 opacity-0 transition group-hover:opacity-100">
+      <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-green-700 opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100">
         {t("Start here")} <ArrowRight size={16} />
       </div>
     </button>

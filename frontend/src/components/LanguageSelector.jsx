@@ -26,7 +26,7 @@ export default function LanguageSelector({ language, setLanguage }) {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 transition hover:bg-gray-50 focus:outline-none"
+        className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-700 shadow-sm transition hover:border-green-200 hover:bg-green-50/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-600"
       >
         <Globe size={16} className="text-gray-500" />
         {currentLang.name}
@@ -34,7 +34,7 @@ export default function LanguageSelector({ language, setLanguage }) {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 rounded-xl border border-gray-100 bg-white p-1 shadow-lg z-50">
+        <div className="absolute right-0 z-50 mt-2 w-44 rounded-2xl border border-green-100 bg-white p-1.5 shadow-[0_16px_45px_rgba(20,83,45,0.14)]">
           {languages.map((lang) => (
             <button
               key={lang.code}
@@ -44,7 +44,7 @@ export default function LanguageSelector({ language, setLanguage }) {
               }}
               className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm text-left transition ${
                 language === lang.code
-                  ? "bg-green-50 text-green-700 font-semibold"
+                  ? "bg-green-50 font-semibold text-green-800"
                   : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
               }`}
             >

@@ -101,7 +101,7 @@ export default function ChatInput({ onSendMessage, disabled, language }) {
     : (isListening ? "Listening..." : "Type your message...");
 
   return (
-    <div className="relative mt-2 flex items-end gap-2 rounded-2xl border border-gray-200 bg-white p-2 shadow-sm transition-colors focus-within:border-green-400 focus-within:ring-2 focus-within:ring-green-100">
+    <div className="relative mt-2 flex items-end gap-2 rounded-2xl border border-gray-200 bg-white p-2 shadow-sm transition focus-within:border-green-400 focus-within:shadow-md focus-within:shadow-green-900/5 focus-within:ring-2 focus-within:ring-green-100">
       
       {/* Microphone button */}
       <button
@@ -110,7 +110,7 @@ export default function ChatInput({ onSendMessage, disabled, language }) {
         className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition ${
           isListening 
             ? "bg-red-100 text-red-600 animate-pulse" 
-            : "bg-gray-50 text-gray-400 hover:bg-green-50 hover:text-green-600"
+            : "bg-gray-50 text-gray-500 hover:bg-green-50 hover:text-green-700"
         } ${disabled ? "opacity-50 cursor-not-allowed" : ""}`}
         title={language === "ta" ? "குரல் உள்ளீடு" : "Voice input"}
       >
@@ -136,7 +136,8 @@ export default function ChatInput({ onSendMessage, disabled, language }) {
       <button
         onClick={handleSend}
         disabled={!message.trim() || disabled}
-        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-green-600 text-white transition hover:bg-green-700 disabled:bg-gray-200 disabled:text-gray-400"
+        aria-label={language === "ta" ? "அனுப்பு" : "Send message"}
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-green-700 to-green-600 text-white shadow-sm shadow-green-900/15 transition hover:-translate-y-0.5 hover:shadow-md disabled:bg-gray-200 disabled:text-gray-400"
       >
         <Send size={18} className="translate-x-[1px]" />
       </button>

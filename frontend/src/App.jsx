@@ -85,7 +85,7 @@ function About({ t }) {
 
   return (
 
-    <main className="min-h-screen bg-[#f7faf7] py-16">
+    <main className="min-h-[70vh] bg-[radial-gradient(ellipse_at_50%_0%,rgba(187,247,208,0.34),transparent_38%),linear-gradient(180deg,#f5faf5_0%,#fbfdfb_340px)] py-12 sm:py-16">
 
       <div className="section-container">
 
@@ -94,22 +94,22 @@ function About({ t }) {
 
           <div className="text-center">
 
-            <p className="text-sm font-bold uppercase tracking-widest text-green-700">
+            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-green-700">
               {t("About the project")}
             </p>
 
-            <h1 className="mt-3 text-4xl font-extrabold text-gray-900 sm:text-5xl">
+            <h1 className="mt-3 text-3xl font-black tracking-tight text-gray-950 sm:text-5xl">
               {t("Government Scheme Recommendation System")}
             </h1>
 
-            <p className="mx-auto mt-5 max-w-2xl leading-7 text-gray-500">
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-600">
               {t("Helping farmers discover relevant government schemes through intelligent profile-based recommendations.")}
             </p>
 
           </div>
 
 
-          <div className="mt-12 rounded-3xl border border-green-100 bg-white p-7 shadow-sm sm:p-10">
+          <div className="mt-10 rounded-[1.75rem] border border-white bg-white/85 p-6 shadow-[0_20px_60px_rgba(20,83,45,0.07)] ring-1 ring-green-900/[0.04] sm:mt-12 sm:p-10">
 
             <h2 className="text-2xl font-bold text-gray-900">
               {t("Why this project?")}
@@ -149,7 +149,7 @@ function About({ t }) {
           </div>
 
 
-          <div className="mt-8 rounded-2xl bg-green-800 p-7 text-white">
+          <div className="mt-8 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-green-800 via-green-800 to-green-700 p-7 text-white shadow-lg shadow-green-900/10 sm:p-8">
 
             <div className="flex items-start gap-4">
 
@@ -194,9 +194,9 @@ function AboutCard({
 
   return (
 
-    <div className="rounded-2xl bg-green-50 p-6">
+    <div className="rounded-2xl border border-green-100 bg-gradient-to-br from-green-50 to-white p-6 transition hover:-translate-y-1 hover:shadow-md">
 
-      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100 text-green-700">
+      <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-green-700 shadow-sm ring-1 ring-green-100">
 
         {icon}
 

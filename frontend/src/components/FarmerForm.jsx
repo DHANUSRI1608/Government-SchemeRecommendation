@@ -87,14 +87,14 @@ export default function FarmerForm({
 
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-green-100 bg-white p-6 shadow-[0_15px_50px_rgba(22,101,52,0.08)] sm:p-8 lg:p-10"
+      className="rounded-[1.65rem] border border-white bg-white p-6 shadow-[0_16px_45px_rgba(20,83,45,0.08)] ring-1 ring-green-900/[0.04] sm:p-8 lg:p-10"
     >
 
       {/* Header */}
 
       <div className="mb-8 flex items-start gap-4">
 
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100 text-green-700">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-green-100 to-lime-50 text-green-700 ring-1 ring-green-200/70">
 
           <User size={23} />
 
@@ -102,7 +102,7 @@ export default function FarmerForm({
 
         <div>
 
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-xl font-extrabold tracking-tight text-gray-950 sm:text-2xl">
             {t("Tell us about yourself")}
           </h2>
 
@@ -302,7 +302,7 @@ export default function FarmerForm({
       <button
         type="submit"
         disabled={loading}
-        className="mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-green-700 px-6 py-4 font-semibold text-white shadow-lg shadow-green-900/10 transition hover:bg-green-800 disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-green-700 to-green-600 px-6 py-4 font-semibold text-white shadow-lg shadow-green-900/15 transition duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-900/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
       >
 
         {loading ? (
