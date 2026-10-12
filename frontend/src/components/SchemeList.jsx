@@ -1,9 +1,12 @@
 import SchemeCard from "./SchemeCard";
 
+import { useTranslation } from "../i18n";
+
 export default function SchemeList({
   schemes,
   onViewDetails
 }) {
+  const { t } = useTranslation();
 
   if (!schemes || schemes.length === 0) {
 
@@ -16,11 +19,11 @@ export default function SchemeList({
         </div>
 
         <h3 className="mt-4 text-lg font-bold text-gray-800">
-          No schemes found
+          {t("No schemes found")}
         </h3>
 
         <p className="mt-2 text-sm text-gray-500">
-          Try changing your search or category.
+          {t("Try changing your search or category.")}
         </p>
 
       </div>

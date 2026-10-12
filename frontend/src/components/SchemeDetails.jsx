@@ -6,11 +6,13 @@ import {
   IndianRupee,
   FileText
 } from "lucide-react";
+import { useTranslation } from "../i18n";
 
 export default function SchemeDetails({
   scheme,
   onClose
 }) {
+  const { t } = useTranslation();
 
   if (!scheme) {
     return null;
@@ -45,7 +47,7 @@ export default function SchemeDetails({
             <div>
 
               <p className="text-xs font-bold uppercase tracking-wider text-green-700">
-                Government Scheme
+                {t("Government Scheme")}
               </p>
 
               <h2 className="mt-1 text-2xl font-bold text-gray-900">
@@ -59,6 +61,7 @@ export default function SchemeDetails({
 
           <button
             onClick={onClose}
+            aria-label={t("Close dialog")}
             className="rounded-full p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-700"
           >
 
@@ -76,19 +79,19 @@ export default function SchemeDetails({
           <div className="rounded-2xl bg-green-50 p-5">
 
             <h3 className="font-semibold text-green-900">
-              About this scheme
+              {t("About this scheme")}
             </h3>
 
             <p className="mt-3 text-sm leading-7 text-green-900/70">
               {scheme.description ||
-                "Detailed information about this government scheme is available here."}
+                t("Detailed information about this government scheme is available here.")}
             </p>
 
           </div>
 
           {scheme.recommendationReason && (
             <div className="mt-4 rounded-2xl border border-green-100 bg-white p-5">
-              <p className="text-xs font-bold uppercase tracking-wider text-green-700">Why this matches</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-green-700">{t("Why this matches")}</p>
               <p className="mt-2 text-sm leading-6 text-gray-600">{scheme.recommendationReason}</p>
             </div>
           )}
@@ -100,7 +103,7 @@ export default function SchemeDetails({
 
               <Detail
                 icon={<Tag size={18} />}
-                title="Category"
+                title={t("Category")}
                 value={Array.isArray(scheme.category) ? scheme.category.join(", ") : scheme.category}
               />
 
@@ -111,7 +114,7 @@ export default function SchemeDetails({
 
               <Detail
                 icon={<MapPin size={18} />}
-                title="Location"
+                title={t("Location")}
                 value={scheme.state}
               />
 
@@ -122,7 +125,7 @@ export default function SchemeDetails({
 
               <Detail
                 icon={<IndianRupee size={18} />}
-                title="Benefits"
+                title={t("Benefits")}
                 value={scheme.benefits}
               />
 
@@ -133,7 +136,7 @@ export default function SchemeDetails({
 
               <Detail
                 icon={<CheckCircle2 size={18} />}
-                title="Eligibility"
+                title={t("Eligibility")}
                 value={scheme.eligibility}
               />
 
@@ -151,7 +154,7 @@ export default function SchemeDetails({
               className="mt-7 flex items-center justify-center rounded-xl bg-green-700 px-5 py-3.5 font-semibold text-white hover:bg-green-800"
             >
 
-              Apply / Learn More
+              {t("Apply / Learn More")}
 
             </a>
 

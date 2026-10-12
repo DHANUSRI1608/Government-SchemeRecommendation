@@ -1,23 +1,41 @@
 import { Sprout } from "lucide-react";
+import { supportedLanguages, useTranslation } from "../i18n";
 
 export default function Navbar({ setPage, activePage }) {
+	const { language, setLanguage, t } = useTranslation();
+
 	return (
 		<header className="sticky top-0 z-50 border-b border-green-100/80 bg-white/90 backdrop-blur">
-			<div className="section-container flex items-center justify-between py-4">
-				<button onClick={() => setPage("home")} aria-label="Go to FarmScheme home" className="flex items-center gap-3 text-left">
+			<div className="section-container flex flex-wrap items-center justify-between gap-3 py-4">
+				<button onClick={() => setPage("home")} aria-label={t("Go to FarmScheme home")} className="flex items-center gap-3 text-left">
 					<span className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-700 text-white">
 						<Sprout size={21} />
 					</span>
 					<span>
 						<span className="block font-bold text-green-800">FarmScheme</span>
-						<span className="block text-xs text-gray-500">Smart Scheme Finder</span>
+						<span className="block text-xs text-gray-500">{t("Smart Scheme Finder")}</span>
 					</span>
 				</button>
-				<nav className="flex gap-1 text-sm font-semibold text-gray-600">
-					<NavButton page="schemes" label="Explore schemes" activePage={activePage} setPage={setPage} />
-					<NavButton page="recommend" label="Find my schemes" activePage={activePage} setPage={setPage} primary />
-					<NavButton page="about" label="About" activePage={activePage} setPage={setPage} />
-				</nav>
+				<div className="flex flex-wrap items-center justify-end gap-2">
+					<nav className="flex flex-wrap gap-1 text-sm font-semibold text-gray-600">
+						<NavButton page="schemes" label={t("Explore schemes")} activePage={activePage} setPage={setPage} />
+						<NavButton page="recommend" label={t("Find my schemes")} activePage={activePage} setPage={setPage} primary />
+						<NavButton page="about" label={t("About")} activePage={activePage} setPage={setPage} />
+					</nav>
+					<label className="flex items-center gap-2 text-sm font-semibold text-gray-600">
+						<span className="sr-only">{t("Language")}</span>
+						<select
+							aria-label={t("Language")}
+							value={language}
+							onChange={(event) => setLanguage(event.target.value)}
+							className="rounded-lg border border-green-100 bg-white px-2 py-2 text-sm text-gray-700 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100"
+						>
+							{supportedLanguages.map(({ code, label }) => (
+								<option key={code} value={code}>{label}</option>
+							))}
+						</select>
+					</label>
+				</div>
 			</div>
 		</header>
 	);

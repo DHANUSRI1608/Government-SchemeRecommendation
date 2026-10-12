@@ -1,6 +1,8 @@
 import { Sprout, ArrowUpRight } from "lucide-react";
+import { useTranslation } from "../i18n";
 
 export default function Footer({ setPage }) {
+  const { t } = useTranslation();
 
   return (
 
@@ -30,7 +32,7 @@ export default function Footer({ setPage }) {
                 </h3>
 
                 <p className="text-xs text-gray-500">
-                  Smart Scheme Finder
+                  {t("Smart Scheme Finder")}
                 </p>
 
               </div>
@@ -39,9 +41,7 @@ export default function Footer({ setPage }) {
 
 
             <p className="mt-4 max-w-sm text-sm leading-6 text-gray-500">
-              A smart platform designed to help farmers
-              discover suitable government schemes based
-              on their individual profile.
+              {t("A smart platform designed to help farmers discover suitable government schemes based on their individual profile.")}
             </p>
 
           </div>
@@ -50,13 +50,13 @@ export default function Footer({ setPage }) {
           <div>
 
             <h4 className="font-semibold text-gray-800">
-              Platform
+              {t("Platform")}
             </h4>
 
             <div className="mt-4 flex flex-col items-start gap-3 text-sm text-gray-500">
-              <FooterButton onClick={() => setPage("recommend")} label="Personalized recommendations" />
-              <FooterButton onClick={() => setPage("schemes")} label="Browse all schemes" />
-              <FooterButton onClick={() => setPage("about")} label="How it works" />
+              <FooterButton onClick={() => setPage("recommend")} label={t("Personalized recommendations")} />
+              <FooterButton onClick={() => setPage("schemes")} label={t("Browse all schemes")} />
+              <FooterButton onClick={() => setPage("about")} label={t("How it works")} />
             </div>
 
           </div>
@@ -65,17 +65,16 @@ export default function Footer({ setPage }) {
           <div>
 
             <h4 className="font-semibold text-gray-800">
-              Project
+              {t("Project")}
             </h4>
 
             <p className="mt-4 text-sm leading-6 text-gray-500">
-              Government Scheme Recommendation System
-              for Farmers.
+              {t("Government Scheme Recommendation System for Farmers.")}
             </p>
 
 
             <button onClick={() => setPage("recommend")} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-green-700 hover:text-green-900">
-              Start finding schemes <ArrowUpRight size={16} />
+              {t("Start finding schemes")} <ArrowUpRight size={16} />
             </button>
 
           </div>

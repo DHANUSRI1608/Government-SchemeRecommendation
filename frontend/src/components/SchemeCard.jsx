@@ -5,22 +5,24 @@ import {
   IndianRupee,
   Sparkles
 } from "lucide-react";
+import { useTranslation } from "../i18n";
 
 export default function SchemeCard({
   scheme,
   onViewDetails
 }) {
+  const { t } = useTranslation();
 
   const name =
     scheme.name ||
     scheme.schemeName ||
     scheme.title ||
-    "Government Scheme";
+    t("Government Scheme");
 
 
   const description =
     scheme.description ||
-    "Government scheme providing support and benefits to eligible farmers.";
+    t("Government scheme providing support and benefits to eligible farmers.");
 
 
   const match =
@@ -56,7 +58,7 @@ export default function SchemeCard({
 
               <Sparkles size={13} />
 
-              {Math.round(match)}% Match
+              {Math.round(match)}% {t("Match")}
 
             </div>
 
@@ -119,7 +121,7 @@ export default function SchemeCard({
             className="flex w-full items-center justify-center gap-2 rounded-xl border border-green-200 px-4 py-3 text-sm font-semibold text-green-700 transition hover:bg-green-50"
           >
 
-            View Scheme Details
+            {t("View Scheme Details")}
 
             <ArrowRight size={17} />
 

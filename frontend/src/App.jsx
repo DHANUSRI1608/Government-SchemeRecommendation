@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { useTranslation } from "./i18n";
 
 import Home from "./pages/Home";
 import Recommend from "./pages/Recommend";
@@ -16,6 +17,7 @@ import {
 
 
 export default function App() {
+  const { t } = useTranslation();
   const [page, setPageState] = useState(() => window.location.hash.slice(1) || "home");
 
   const setPage = (nextPage) => {
@@ -42,7 +44,7 @@ export default function App() {
         return <Schemes />;
 
       case "about":
-        return <About />;
+        return <About t={t} />;
 
       default:
         return (
@@ -75,7 +77,7 @@ export default function App() {
 }
 
 
-function About() {
+function About({ t }) {
 
   return (
 
@@ -89,17 +91,15 @@ function About() {
           <div className="text-center">
 
             <p className="text-sm font-bold uppercase tracking-widest text-green-700">
-              About the project
+              {t("About the project")}
             </p>
 
             <h1 className="mt-3 text-4xl font-extrabold text-gray-900 sm:text-5xl">
-              Government Scheme Recommendation System
+              {t("Government Scheme Recommendation System")}
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl leading-7 text-gray-500">
-              Helping farmers discover relevant government
-              schemes through intelligent profile-based
-              recommendations.
+              {t("Helping farmers discover relevant government schemes through intelligent profile-based recommendations.")}
             </p>
 
           </div>
@@ -108,20 +108,15 @@ function About() {
           <div className="mt-12 rounded-3xl border border-green-100 bg-white p-7 shadow-sm sm:p-10">
 
             <h2 className="text-2xl font-bold text-gray-900">
-              Why this project?
+              {t("Why this project?")}
             </h2>
 
             <p className="mt-4 leading-8 text-gray-600">
-              Farmers may have difficulty identifying suitable
-              government schemes because information is spread
-              across different sources and eligibility conditions
-              can vary between schemes.
+              {t("Farmers may have difficulty identifying suitable government schemes because information is spread across different sources and eligibility conditions can vary between schemes.")}
             </p>
 
             <p className="mt-4 leading-8 text-gray-600">
-              This system simplifies the process by allowing a
-              farmer to provide basic information and receive
-              personalized scheme recommendations.
+              {t("This system simplifies the process by allowing a farmer to provide basic information and receive personalized scheme recommendations.")}
             </p>
 
 
@@ -129,20 +124,20 @@ function About() {
 
               <AboutCard
                 icon={<Target size={22} />}
-                title="Personalized"
-                text="Recommendations are based on farmer-specific information."
+                title={t("Personalized")}
+                text={t("Recommendations are based on farmer-specific information.")}
               />
 
               <AboutCard
                 icon={<BrainCircuit size={22} />}
-                title="Intelligent"
-                text="Uses eligibility and semantic matching techniques."
+                title={t("Intelligent")}
+                text={t("Uses eligibility and semantic matching techniques.")}
               />
 
               <AboutCard
                 icon={<Database size={22} />}
-                title="Centralized"
-                text="Makes scheme information easier to discover in one place."
+                title={t("Centralized")}
+                text={t("Makes scheme information easier to discover in one place.")}
               />
 
             </div>
@@ -162,7 +157,7 @@ function About() {
               <div>
 
                 <h3 className="text-lg font-bold">
-                  Technology Stack
+                  {t("Technology Stack")}
                 </h3>
 
                 <p className="mt-2 text-sm leading-7 text-green-100">

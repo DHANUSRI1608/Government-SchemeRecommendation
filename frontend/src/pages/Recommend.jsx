@@ -13,8 +13,10 @@ import {
 import {
   recommendSchemes
 } from "../services/api";
+import { useTranslation } from "../i18n";
 
 export default function Recommend() {
+  const { t } = useTranslation();
 
   const [recommendations, setRecommendations] = useState([]);
 
@@ -92,16 +94,15 @@ export default function Recommend() {
           </div>
 
           <p className="mt-5 text-sm font-bold uppercase tracking-wider text-green-700">
-            Personalized Recommendation
+            {t("Personalized Recommendation")}
           </p>
 
           <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
-            Find schemes for you
+            {t("Find schemes for you")}
           </h1>
 
           <p className="mt-4 leading-7 text-gray-500">
-            Enter your details and discover government schemes
-            that match your farming profile.
+            {t("Enter your details and discover government schemes that match your farming profile.")}
           </p>
 
         </div>
@@ -150,15 +151,15 @@ export default function Recommend() {
               <div>
 
                 <p className="text-sm font-bold uppercase tracking-wider text-green-700">
-                  Results
+                  {t("Results")}
                 </p>
 
                 <h2 className="mt-2 text-3xl font-extrabold text-gray-900">
-                  Recommended schemes
+                  {t("Recommended schemes")}
                 </h2>
 
                 <p className="mt-2 text-gray-500">
-                  These schemes match the information you provided.
+                  {t("These schemes match the information you provided.")}
                 </p>
 
               </div>
@@ -171,7 +172,7 @@ export default function Recommend() {
 
                 <RotateCcw size={17} />
 
-                Start Again
+                {t("Start Again")}
 
               </button>
 

@@ -6,8 +6,10 @@ import {
   BadgeCheck,
   ArrowRight
 } from "lucide-react";
+import { useTranslation } from "../i18n";
 
 export default function Home({ setPage }) {
+  const { t } = useTranslation();
 
   return (
 
@@ -25,15 +27,15 @@ export default function Home({ setPage }) {
           <div className="mx-auto max-w-2xl text-center">
 
             <p className="text-sm font-bold uppercase tracking-widest text-green-700">
-              Simple Process
+              {t("Simple Process")}
             </p>
 
             <h2 className="mt-3 text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              How it works
+              {t("How it works")}
             </h2>
 
             <p className="mt-4 text-gray-500">
-              Find suitable government schemes in just a few simple steps.
+              {t("Find suitable government schemes in just a few simple steps.")}
             </p>
 
           </div>
@@ -44,24 +46,24 @@ export default function Home({ setPage }) {
             <StepCard
               number="01"
               icon={<UserRound size={24} />}
-              title="Create your profile"
-              description="Enter your basic farming information such as state, income, landholding and category."
+              title={t("Create your profile")}
+              description={t("Enter your basic farming information such as state, income, landholding and category.")}
               onClick={() => setPage("recommend")}
             />
 
             <StepCard
               number="02"
               icon={<BrainCircuit size={24} />}
-              title="Smart matching"
-              description="The recommendation system analyses your information against available schemes."
+              title={t("Smart matching")}
+              description={t("The recommendation system analyses your information against available schemes.")}
               onClick={() => setPage("recommend")}
             />
 
             <StepCard
               number="03"
               icon={<BadgeCheck size={24} />}
-              title="Get recommendations"
-              description="View the schemes that best match your profile and eligibility."
+              title={t("Get recommendations")}
+              description={t("View the schemes that best match your profile and eligibility.")}
               onClick={() => setPage("recommend")}
             />
 
@@ -82,17 +84,17 @@ export default function Home({ setPage }) {
 
             <Stat
               number="794+"
-              text="Government Schemes"
+              text={t("Government Schemes")}
             />
 
             <Stat
               number="5+"
-              text="Agriculture Categories"
+              text={t("Agriculture Categories")}
             />
 
             <Stat
               number="AI"
-              text="Personalized Matching"
+              text={t("Personalized Matching")}
             />
 
           </div>
@@ -115,16 +117,15 @@ export default function Home({ setPage }) {
               <div className="max-w-2xl">
 
                 <p className="text-sm font-bold uppercase tracking-wider text-green-700">
-                  Get started
+                  {t("Get started")}
                 </p>
 
                 <h2 className="mt-2 text-3xl font-extrabold text-green-950">
-                  Find schemes that match your needs.
+                  {t("Find schemes that match your needs.")}
                 </h2>
 
                 <p className="mt-3 leading-7 text-green-900/60">
-                  Enter your farming details and discover
-                  relevant government support programs.
+                  {t("Enter your farming details and discover relevant government support programs.")}
                 </p>
 
               </div>
@@ -135,7 +136,7 @@ export default function Home({ setPage }) {
                 className="flex shrink-0 items-center gap-2 rounded-xl bg-green-700 px-6 py-3.5 font-semibold text-white hover:bg-green-800"
               >
 
-                Start Recommendation
+                {t("Start Recommendation")}
 
                 <ArrowRight size={18} />
 
@@ -162,6 +163,7 @@ function StepCard({
   description,
   onClick
 }) {
+  const { t } = useTranslation();
 
   return (
 
@@ -188,7 +190,7 @@ function StepCard({
       </p>
 
       <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-green-700 opacity-0 transition group-hover:opacity-100">
-        Start here <ArrowRight size={16} />
+        {t("Start here")} <ArrowRight size={16} />
       </div>
     </button>
 

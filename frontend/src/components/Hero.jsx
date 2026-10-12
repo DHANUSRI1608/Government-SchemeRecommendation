@@ -5,8 +5,10 @@ import {
   ShieldCheck,
   Search
 } from "lucide-react";
+import { useTranslation } from "../i18n";
 
 export default function Hero({ setPage }) {
+  const { t } = useTranslation();
 
   return (
 
@@ -24,29 +26,23 @@ export default function Hero({ setPage }) {
 
               <Sprout size={16} />
 
-              Smart Agriculture Platform
+              {t("Smart Agriculture Platform")}
 
             </div>
 
 
             <h1 className="max-w-2xl text-4xl font-extrabold leading-[1.12] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
 
-              Discover the right
-
-              <span className="text-gradient">
-                {" "}government schemes
-              </span>
-
-              {" "}for you.
+              {t("Discover the right")}
+              <span className="text-gradient">{" "}{t("government schemes")}</span>
+              {" "}{t("for you.")}
 
             </h1>
 
 
             <p className="mt-6 max-w-xl text-base leading-7 text-gray-600 sm:text-lg">
 
-              Find government schemes based on your
-              location, income, landholding, category
-              and farming needs — all in one place.
+              {t("Find government schemes based on your location, income, landholding, category and farming needs — all in one place.")}
 
             </p>
 
@@ -60,7 +56,7 @@ export default function Hero({ setPage }) {
 
                 <SparklesIcon />
 
-                Find My Schemes
+                {t("Find My Schemes")}
 
                 <ArrowRight size={18} />
 
@@ -74,7 +70,7 @@ export default function Hero({ setPage }) {
 
                 <Search size={18} />
 
-                Browse Schemes
+                {t("Browse Schemes")}
 
               </button>
 
@@ -83,11 +79,11 @@ export default function Hero({ setPage }) {
 
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
 
-              <Feature text="Personalized" />
+              <Feature text={t("Personalized")} />
 
-              <Feature text="Simple & Easy" />
+              <Feature text={t("Simple & Easy")} />
 
-              <Feature text="AI Assisted" />
+              <Feature text={t("AI Assisted")} />
 
             </div>
 
@@ -122,11 +118,11 @@ export default function Hero({ setPage }) {
                     <div>
 
                       <p className="text-xs text-gray-500">
-                        Farmer profile
+                        {t("Farmer profile")}
                       </p>
 
                       <h3 className="font-bold text-gray-900">
-                        Your Information
+                        {t("Your Information")}
                       </h3>
 
                     </div>
@@ -144,19 +140,19 @@ export default function Hero({ setPage }) {
                 <div className="mt-7 space-y-5">
 
                   <ProfileRow
-                    title="Location"
+                    title={t("Location")}
                     value="Tamil Nadu"
                     percentage="82%"
                   />
 
                   <ProfileRow
-                    title="Land Holding"
+                    title={t("Land Holding")}
                     value="2.5 Acres"
                     percentage="62%"
                   />
 
                   <ProfileRow
-                    title="Annual Income"
+                    title={t("Annual Income")}
                     value="₹1.5 Lakh"
                     percentage="45%"
                   />
@@ -171,11 +167,11 @@ export default function Hero({ setPage }) {
                     <div>
 
                       <p className="text-xs font-medium text-green-700">
-                        AI Recommendation
+                        {t("AI Recommendation")}
                       </p>
 
                       <p className="mt-1 text-lg font-bold text-green-900">
-                        12 schemes found
+                        {t("12 schemes found")}
                       </p>
 
                     </div>
@@ -206,11 +202,11 @@ export default function Hero({ setPage }) {
                   <div>
 
                     <p className="text-xs text-gray-500">
-                      Best match
+                      {t("Best match")}
                     </p>
 
                     <p className="text-sm font-bold text-gray-900">
-                      96% eligible
+                      {t("96% eligible")}
                     </p>
 
                   </div>

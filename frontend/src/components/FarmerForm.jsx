@@ -10,11 +10,13 @@ import {
   LoaderCircle,
   ChevronDown
 } from "lucide-react";
+import { useTranslation } from "../i18n";
 
 export default function FarmerForm({
   onSubmit,
   loading
 }) {
+  const { t } = useTranslation();
 
   const [form, setForm] = useState({
     state: "",
@@ -101,12 +103,11 @@ export default function FarmerForm({
         <div>
 
           <h2 className="text-2xl font-bold text-gray-900">
-            Tell us about yourself
+            {t("Tell us about yourself")}
           </h2>
 
           <p className="mt-1 text-sm leading-6 text-gray-500">
-            Your information helps us find schemes that
-            match your eligibility.
+            {t("Your information helps us find schemes that match your eligibility.")}
           </p>
 
         </div>
@@ -119,7 +120,7 @@ export default function FarmerForm({
       <div className="grid gap-5 md:grid-cols-2">
 
         <Field
-          label="State"
+          label={t("State")}
           icon={<MapPin size={17} />}
         >
 
@@ -134,7 +135,7 @@ export default function FarmerForm({
             >
 
               <option value="">
-                Select your state
+                {t("Select your state")}
               </option>
 
               {states.map((state) => (
@@ -160,18 +161,18 @@ export default function FarmerForm({
         </Field>
 
 
-        <Field label="Gender" icon={<User size={17} />}>
+        <Field label={t("Gender")} icon={<User size={17} />}>
           <select name="gender" value={form.gender} onChange={updateField} required className="input-field">
-            <option value="">Select gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
+            <option value="">{t("Select gender")}</option>
+            <option value="Male">{t("Male")}</option>
+            <option value="Female">{t("Female")}</option>
+            <option value="Other">{t("Other")}</option>
           </select>
         </Field>
 
 
         <Field
-          label="Age"
+          label={t("Age")}
           icon={<User size={17} />}
         >
 
@@ -182,7 +183,7 @@ export default function FarmerForm({
             onChange={updateField}
             min="18"
             max="100"
-            placeholder="Enter your age"
+            placeholder={t("Enter your age")}
             required
             className="input-field"
           />
@@ -191,7 +192,7 @@ export default function FarmerForm({
 
 
         <Field
-          label="Annual Income"
+          label={t("Annual Income")}
           icon={<Wallet size={17} />}
         >
 
@@ -201,7 +202,7 @@ export default function FarmerForm({
             value={form.income}
             onChange={updateField}
             min="0"
-            placeholder="Example: 150000"
+            placeholder={t("Example: 150000")}
             required
             className="input-field"
           />
@@ -210,7 +211,7 @@ export default function FarmerForm({
 
 
         <Field
-          label="Land Holding"
+          label={t("Land Holding")}
           icon={<LandPlot size={17} />}
         >
 
@@ -223,13 +224,13 @@ export default function FarmerForm({
               value={form.landHolding}
               onChange={updateField}
               min="0"
-              placeholder="Example: 2.5"
+              placeholder={t("Example: 2.5")}
               required
               className="input-field pr-20"
             />
 
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-gray-400">
-              acres
+              {t("acres")}
             </span>
 
           </div>
@@ -238,7 +239,7 @@ export default function FarmerForm({
 
 
         <Field
-          label="Farmer Category"
+          label={t("Farmer Category")}
           icon={<Users size={17} />}
         >
 
@@ -253,7 +254,7 @@ export default function FarmerForm({
             >
 
               <option value="">
-                Select category
+                {t("Select category")}
               </option>
 
               {categories.map((category) => (
@@ -262,7 +263,7 @@ export default function FarmerForm({
                   key={category}
                   value={category}
                 >
-                  {category}
+                  {t(category)}
                 </option>
 
               ))}
@@ -281,17 +282,17 @@ export default function FarmerForm({
       </div>
 
       <div className="mt-5 grid gap-5 md:grid-cols-2">
-        <Field label="Education" icon={<User size={17} />}>
-          <input name="education" value={form.education} onChange={updateField} placeholder="Example: 10th" className="input-field" />
+        <Field label={t("Education")} icon={<User size={17} />}>
+          <input name="education" value={form.education} onChange={updateField} placeholder={t("Example: 10th")} className="input-field" />
         </Field>
 
-        <Field label="Support needed" icon={<Search size={17} />}>
-          <input name="keywords" value={form.keywords} onChange={updateField} placeholder="Example: drip irrigation" className="input-field" />
+        <Field label={t("Support needed")} icon={<Search size={17} />}>
+          <input name="keywords" value={form.keywords} onChange={updateField} placeholder={t("Example: drip irrigation")} className="input-field" />
         </Field>
 
         <label className="flex items-center gap-3 text-sm font-semibold text-gray-700">
           <input type="checkbox" name="disability" checked={form.disability} onChange={(event) => setForm({ ...form, disability: event.target.checked })} />
-          Person with disability
+          {t("Person with disability")}
         </label>
       </div>
 
@@ -312,7 +313,7 @@ export default function FarmerForm({
               className="animate-spin"
             />
 
-            Finding suitable schemes...
+            {t("Finding suitable schemes...")}
           </>
 
         ) : (
@@ -320,7 +321,7 @@ export default function FarmerForm({
           <>
             <Search size={20} />
 
-            Recommend Schemes
+            {t("Recommend Schemes")}
           </>
 
         )}
@@ -329,7 +330,7 @@ export default function FarmerForm({
 
 
       <p className="mt-3 text-center text-xs text-gray-400">
-        Your details are used only to identify suitable schemes.
+        {t("Your details are used only to identify suitable schemes.")}
       </p>
 
     </form>
